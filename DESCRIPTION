@@ -1,0 +1,10 @@
+Package: ECHOcovariates
+Title: ECHO-study Covariates Workflow
+Version: 0.1.0
+Author: Nathan Laniewski
+Maintainer: Nathan Laniewski <nathan_laniewski@urmc.rochester.edu>
+Description: Contains ECHO-specific functions for working with covariates/metadata (e.g., ACES, PFAS, PSWQ)
+License: GPL (>= 3)
+Encoding: UTF-8
+RoxygenNote: 7.2.1
+Imports:
