@@ -30,5 +30,6 @@ generate.pfas.data.frame <- function(pfas.dataset.filepath){
   ##
   #rm(pfas.of.interest)
   colnames(pfas.data.subset) <- gsub(" ",".",tolower(colnames(pfas.data.subset)))
+  colnames(pfas.data.subset)[grep("family.id",colnames(pfas.data.subset))] <- "subject.trunc"
   return(pfas.data.subset)
 }
