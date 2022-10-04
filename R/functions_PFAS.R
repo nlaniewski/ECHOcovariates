@@ -22,5 +22,6 @@ generate.pfas.data.frame <- function(pfas.dataset.filepath,pfas.of.interest=c("P
   #rm(pfas.of.interest)
   colnames(pfas.data.subset) <- gsub(" ",".",tolower(colnames(pfas.data.subset)))
   colnames(pfas.data.subset)[grep("family.id",colnames(pfas.data.subset))] <- "subject.trunc"
+  colnames(pfas.data.subset)[grep("visit",colnames(pfas.data.subset))] <- "visit.trimester"
   return(pfas.data.subset)
 }
