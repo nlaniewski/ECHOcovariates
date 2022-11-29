@@ -15,6 +15,8 @@ generate.pfas.data.frame <- function(pfas.dataset.filepath,pfas.of.interest=c("P
   pfas.data <- readxl::read_xlsx(pfas.dataset.filepath)
   ##SUBSET
   pfas.data.subset <- pfas.data[,colnames(pfas.data) %in% c(other.columns.of.interest, pfas.of.interest)]
+  ##set factor
+  pfas.data.subset[,other.columns.of.interest] <- lapply(pfas.data.subset[,other.columns.of.interest],factor)
   ##Log10 TRANSFORM
   message("Log10 (+1) transforming pfas...")
   pfas.data.subset[,pfas.of.interest] <- log10(pfas.data.subset[,pfas.of.interest]+1)#adding a constant (+1) to deal with '-Inf'
