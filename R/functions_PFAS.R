@@ -5,7 +5,8 @@
 #' @return a curated data.frame
 #' @export
 #
-generate.pfas.data.frame <- function(pfas.dataset.filepath,pfas.of.interest=c("PFDA","PFHXS","PFNA","PFOA","PFOS","PFPEA")){
+generate.pfas.data.frame <- function(pfas.dataset.filepath){
+  pfas.of.interest=c("PFDA","PFHXS","PFNA","PFOA","PFOS","PFPEA")
   other.columns.of.interest <- c("Participant ID",
                                  "Family Id",
                                  "Sequence Num",
