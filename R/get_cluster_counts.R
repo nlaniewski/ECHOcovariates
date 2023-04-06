@@ -6,8 +6,8 @@ get_cluster_counts<-function(cluster.counts.long.filepath,cluster.annotations.fi
   cluster.counts[,batch := factor(sprintf("%03d",batch))]
   cluster.counts[,cluster := factor(cluster,levels=sort(unique(cluster)))]
   ##relevel visit
-  cluster.counts[,visit := factor(visit,levels=c(paste0("V",c(4,6,7)),"Adult"),labels = c("Birth","6-months","12-months","Adult"))]
-  cluster.counts[,visit.alias := factor(visit,levels=c(paste0("V",c(4,6,7)),"Adult"),labels = c("Birth","6-months","12-months","Adult"))]
+  cluster.counts[,visit := factor(visit,levels=c(paste0("V",c(4,6,7)),"Adult"))]
+  cluster.counts[,visit.alias := factor(visit,labels = c("Birth","6-months","12-months","Adult"))]
   ##
   cell.types<-split(cluster.counts,by='cell.type')
   cell.types<-lapply(cell.types,function(i){
